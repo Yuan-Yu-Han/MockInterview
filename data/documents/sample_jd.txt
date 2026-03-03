@@ -1,0 +1,22 @@
+Position: Staff Backend Engineer – Platform Team
+Company: DataFlow Inc.
+
+REQUIRED SKILLS
+- 5+ years Python backend development
+- Strong experience with distributed systems and microservices
+- Proficiency in Kubernetes and container orchestration
+- PostgreSQL / NoSQL database design and optimization
+- Experience with message queues (Kafka, RabbitMQ, or Redis Streams)
+
+PREFERRED SKILLS
+- Experience with ML model serving or MLOps pipelines
+- Knowledge of streaming data processing (Flink, Spark)
+- AWS or GCP cloud infrastructure experience
+- Prior experience leading small engineering teams
+
+RESPONSIBILITIES
+- Design and implement highly available backend services (SLA 99.99%)
+- Architect data pipelines processing terabytes of daily event data
+- Drive technical decisions for the platform engineering team
+- Mentor junior engineers and conduct code reviews
+- Collaborate with ML team to productionize machine learning models

@@ -1,0 +1,11 @@
+# 微调依赖（与主 requirements.txt 分开，按需安装）
+# pip install -r requirements-finetune.txt
+
+torch>=2.2.0
+transformers>=4.45.0
+trl>=0.12.0
+peft>=0.13.0
+datasets>=2.20.0
+bitsandbytes>=0.44.0
+accelerate>=0.30.0
+openai>=1.0.0

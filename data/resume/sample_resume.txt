@@ -1,0 +1,27 @@
+Name: Alex Chen
+Email: alex.chen@email.com
+
+SKILLS
+Python, FastAPI, PostgreSQL, Docker, Kubernetes, Redis, React, TypeScript,
+Machine Learning (PyTorch, scikit-learn), AWS (EC2, S3, Lambda), Git, CI/CD
+
+EXPERIENCE
+Senior Backend Engineer – TechCorp (2021–2024)
+  • Built microservices with FastAPI serving 10M+ daily requests
+  • Migrated monolith to Kubernetes, reducing infra cost by 35%
+  • Led team of 4 engineers on payment processing service
+
+Software Engineer – StartupABC (2019–2021)
+  • Developed REST APIs with Django for e-commerce platform
+  • Implemented Redis caching layer, improving response time by 60%
+  • Wrote ETL pipelines processing 5GB of daily data
+
+EDUCATION
+B.S. Computer Science – University of California, Berkeley (2019)
+
+PROJECTS
+Distributed Task Queue: Built async task queue in Python using Redis Streams,
+  supporting 50k tasks/sec with at-least-once delivery guarantees.
+
+ML Model Serving Platform: FastAPI + Docker + Kubernetes platform for deploying
+  PyTorch models, with A/B testing and canary deployment support.

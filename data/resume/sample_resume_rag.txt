@@ -1,0 +1,38 @@
+姓名：陈晓明
+职位：高级后端工程师
+邮箱：chenxiaoming@example.com
+电话：138-0000-0000
+
+=== 技能栈 ===
+编程语言：Python（5年）、Go（2年）、Java（3年）
+框架：FastAPI、Django、Spring Boot、gRPC
+数据库：PostgreSQL、Redis、MongoDB、Elasticsearch
+云平台：AWS（EC2、S3、RDS、Lambda）、Docker、Kubernetes
+其他：CI/CD（GitHub Actions）、Kafka 消息队列、微服务架构
+
+=== 工作经验 ===
+
+2021.06 - 至今  字节跳动  高级后端工程师
+- 负责推荐系统后端服务，日均处理请求量 5 亿次
+- 主导微服务拆分，将单体应用拆为 12 个独立服务，P99 延迟从 200ms 降至 45ms
+- 设计并实现分布式限流方案，使用 Redis Lua 脚本保证原子性
+- 带领 3 人团队完成用户画像系统重构，覆盖 2 亿用户数据
+
+2019.07 - 2021.05  美团  后端工程师
+- 开发骑手调度系统核心模块，支撑全国 300 万骑手实时调度
+- 优化 SQL 查询，将日报表生成时间从 2 小时压缩至 8 分钟
+- 参与 MySQL → PostgreSQL 数据库迁移，零停机完成 TB 级数据迁移
+
+=== 教育背景 ===
+2015 - 2019  浙江大学  计算机科学与技术  本科
+
+=== 项目经历 ===
+
+分布式任务调度框架（开源）
+- GitHub Stars: 2.3k，被 50+ 家公司生产使用
+- 基于 Python 实现，支持 Cron、DAG 依赖、优先级队列调度
+- 集成 Prometheus + Grafana 监控，支持 Docker Compose 一键部署
+
+高并发秒杀系统（个人项目）
+- 采用 Redis 预减库存 + 异步 MQ 处理订单，QPS 支持 5 万/秒
+- 完整实现限流、降级、熔断三层防护策略

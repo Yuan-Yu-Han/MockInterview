@@ -1,0 +1,90 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# ── 虚拟环境 ──────────────────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── 环境变量 / 密钥（绝对不能上传）─────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── RAG-MCP-SERVER 配置（含 API Key，改为用 .env 或 settings.yaml.example）──
+RAG-MCP-SERVER/config/settings.yaml
+
+# ── 向量数据库 / 持久化数据 ────────────────────────────────────────────────
+RAG-MCP-SERVER/data/
+data/db/
+data/logs/
+data/images/
+*.chroma/
+chroma.sqlite3
+
+# ── 日志 / 追踪文件 ────────────────────────────────────────────────────────
+logs/
+*.log
+RAG-MCP-SERVER/logs/
+
+# ── 面试报告输出（用户私有数据）─────────────────────────────────────────────
+data/output/
+data/reports/
+
+# ── 用户简历/JD（保留 sample 示例文件）──────────────────────────────────────
+data/uploads/*
+!data/uploads/sample_resume.txt
+!data/uploads/sample_jd.txt
+data/resume/*
+!data/resume/sample_resume.txt
+!data/resume/sample_resume_rag.txt
+data/documents/*
+!data/documents/sample_jd.txt
+!data/documents/sample_jd_rag.txt
+
+# ── Finetune 生成数据 / 模型输出 ─────────────────────────────────────────────
+data/finetune/
+finetune/outputs/
+finetune/vllm/
+
+# ── Claude Code 本地配置 ──────────────────────────────────────────────────────
+.claude/
+
+# ── IDE / 编辑器 ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── pytest / 测试缓存 ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── mypy / ruff / 静态分析缓存 ────────────────────────────────────────────────
+.mypy_cache/
+.ruff_cache/
+
+# ── 其他临时文件 ──────────────────────────────────────────────────────────────
+*.tmp
+*.bak
