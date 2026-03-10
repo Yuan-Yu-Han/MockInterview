@@ -48,13 +48,12 @@ data/uploads/*
 !data/uploads/sample_jd.txt
 data/resume/*
 !data/resume/sample_resume.txt
-!data/resume/sample_resume_rag.txt
 data/documents/*
 !data/documents/sample_jd.txt
-!data/documents/sample_jd_rag.txt
 
-# ── Finetune 生成数据 / 模型输出 ─────────────────────────────────────────────
+# ── Finetune 生成数据 / 模型权重 ─────────────────────────────────────────────
 data/finetune/
+data/models/
 finetune/outputs/
 finetune/vllm/
 

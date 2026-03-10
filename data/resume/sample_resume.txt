@@ -1,27 +1,41 @@
-Name: Alex Chen
-Email: alex.chen@email.com
-
-SKILLS
-Python, FastAPI, PostgreSQL, Docker, Kubernetes, Redis, React, TypeScript,
-Machine Learning (PyTorch, scikit-learn), AWS (EC2, S3, Lambda), Git, CI/CD
-
-EXPERIENCE
-Senior Backend Engineer – TechCorp (2021–2024)
-  • Built microservices with FastAPI serving 10M+ daily requests
-  • Migrated monolith to Kubernetes, reducing infra cost by 35%
-  • Led team of 4 engineers on payment processing service
-
-Software Engineer – StartupABC (2019–2021)
-  • Developed REST APIs with Django for e-commerce platform
-  • Implemented Redis caching layer, improving response time by 60%
-  • Wrote ETL pipelines processing 5GB of daily data
-
-EDUCATION
-B.S. Computer Science – University of California, Berkeley (2019)
-
-PROJECTS
-Distributed Task Queue: Built async task queue in Python using Redis Streams,
-  supporting 50k tasks/sec with at-least-once delivery guarantees.
-
-ML Model Serving Platform: FastAPI + Docker + Kubernetes platform for deploying
-  PyTorch models, with A/B testing and canary deployment support.
+袁雨涵
+https://github.com/Yuan-Yu-Han
+邮箱：yuanyuhan65@163.com
+微信：yyh18972040605
+电话：+86 18972040605（目前在海外，请邮箱/微信联系）
+Education
+• 南洋理工大学 新加坡
+理学硕士·信号处理与机器学习；GPA: 4.38/5 2025 年 8 月 – 2027 年 3 月
+作为课程助教，设计并实现 Transformer 机器翻译教学实验项目
+• 浙江大学 中国·浙江
+工学学士·自动化；GPA: 3.73/4.0 2021 年 9 月 – 2025 年 6 月
+荣誉奖励：三等奖学金 (2024)、优秀毕业生 (2025)
+Projects
+• AI 集成智能火场监控平台
+vLLM ·Qwen3-VL ·YOLOv8 ·LangChain ·RAG ·FastAPI ·WebSocket
+◦ 背景: 传统监控仅能触发静态报警，无法理解现场语义、辅助指挥决策，设计融合 VLM、Agent、RAG 的端到端火
+场态势感知系统。
+◦ 事件驱动流水线: 设计 RTSP → YOLOv8 → 三态状态机 → VLM 全链路，精确控制 Agent 触发时机，实现精准事
+件分析。
+◦ ReAct Agent: 基于 LangChain 构建分层 ReAct Agent，注册事件查询、对比分析等工具链，集成人工审批中间
+件，支持多线程异步并发执行。
+◦ 意图驱动 RAG: 设计意图路由层，基于 LLM 解析用户查询语义，动态选择检索事件案例库、对话记忆或知识库，
+按需召回替代固定检索策略。
+◦ 前后端架构: FastAPI 提供仪表盘与流式对话接口，Next.js 前端实现实时视频流，事件分析与 AI 对话面板。
+◦ 结果: 实现火灾与烟雾双级分级告警，VLM 语义描述自动归档并同步向量索引，完成监控感知闭环。
+• 多智能体 AI 模拟面试系统
+Python ·Agno ·MCP ·RAG ·vLLM
+◦ 背景: 求职者缺乏专业深度的面试练习，现有 AI 工具反馈泛化、追问浅薄，无法基于私有领域知识精准考察。
+◦ RAG + MCP 知识检索: 遵循 MCP 协议（Stdio）构建知识检索服务并集成到面试框架；实现文档解析 → 分块
+→ Embedding → 向量索引全流水线，整合 BM25 与 Dense 混合检索，支持领域知识驱动的精准追问。
+◦ 三智能体编排: 基于 Agno 设计 Interviewer / Interviewee / Eval 三智能体架构，严格隔离候选人上下文，支持全
+AI 与人机交互双模式，vLLM 本地部署 Qwen3 作为推理后端。
+◦ SFT + DPO 自我改进: 开发自动化训练数据流水线，基于面试对话生成 SFT 样本与 DPO 偏好对，使用 4-bit
+QLoRA 微调模型，构建问答质量与评分一致性的持续优化闭环。
+◦ 结果: 系统支持基于自定义知识库的专业领域深度面试；Agent 连接本地 RAG MCP 工具调用成功率达 95%+；
+DPO 微调后评分一致性较基线提升约 20%
+Skills
+编程语言与深度学习: Python, PyTorch, Transformers, LoRA, SFT/DPO
+系统开发与部署: LangChain/LangGraph, Agno, RAG, MCP, FastAPI/Flask, WebSocket
+数据库: ChromaDB, SQLite
+其他能力: Git, Linux, 英语流利, 熟练使用 Claude Code、Codex 、Copilot 等 AI 工具

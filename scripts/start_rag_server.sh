@@ -7,9 +7,6 @@
 
 set -e
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-RAG_DIR="$SCRIPT_DIR/RAG-MCP-SERVER"
+MODULAR_RAG="/home/yuan0165/MODULAR-RAG-MCP-SERVER"
 
-export PYTHONPATH="$RAG_DIR:${PYTHONPATH:-}"
-
-exec python "$RAG_DIR/src/mcp_server/server.py"
+exec /home/yuan0165/.conda/envs/vllm/bin/python "$MODULAR_RAG/src/mcp_server/server.py"

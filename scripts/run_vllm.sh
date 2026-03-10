@@ -27,14 +27,14 @@ python3 -m vllm.entrypoints.openai.api_server \
     --served-model-name Qwen3-8B \
     --host 0.0.0.0 \
     --port $PORT \
-    --tensor-parallel-size 1 \
-    --max-model-len 4096 \
+    --tensor-parallel-size 2 \
+    --max-model-len 8192 \
     --dtype=float16 \
     --gpu-memory-utilization 0.85 \
     --enable-auto-tool-choice \
     --tool-call-parser hermes \
     --max-num-seqs 4 \
-    --max-num-batched-tokens 4096 \
+    --max-num-batched-tokens 8192 \
     --enable-prefix-caching \
     > $LOG_FILE 2>&1
     

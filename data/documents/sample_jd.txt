@@ -1,22 +1,19 @@
-Position: Staff Backend Engineer – Platform Team
-Company: DataFlow Inc.
+【27届实习】Product Engineer-产品工程师（AI应用方向）-质效研发
+职位类型：客户端开发
+工作地点：北京市，上海市，杭州市
+工作职责
+工作职责
+1、构建AI Native研发工具链，设计并实现基于LLM的下一代研发工具，覆盖需求理解、代码生成、测试验证、发布部署全链路；探索AI自主交付模式，让AI从"辅助工具"升级为"独立交付者"；
+2、攻坚LLM工程化核心难题，解决大模型在实际研发场景的落地瓶颈：上下文理解、长程推理、多步骤任务规划；主导智能代码生成、智能测试、智能运维等核心模块架构设计。
+3、驱动技术范式革新，深入理解小红书多元业务场景（社区/电商/多媒体/搜推广），用AI重新定义研发流程；探索Multi-Agent协作、AI自我进化等前沿方向。
+4、共创开发者生态，参与Skill生态建设，让业务团队能快速构建专属AI能力；推动AI研发最佳实践在全公司落地。
 
-REQUIRED SKILLS
-- 5+ years Python backend development
-- Strong experience with distributed systems and microservices
-- Proficiency in Kubernetes and container orchestration
-- PostgreSQL / NoSQL database design and optimization
-- Experience with message queues (Kafka, RabbitMQ, or Redis Streams)
-
-PREFERRED SKILLS
-- Experience with ML model serving or MLOps pipelines
-- Knowledge of streaming data processing (Flink, Spark)
-- AWS or GCP cloud infrastructure experience
-- Prior experience leading small engineering teams
-
-RESPONSIBILITIES
-- Design and implement highly available backend services (SLA 99.99%)
-- Architect data pipelines processing terabytes of daily event data
-- Drive technical decisions for the platform engineering team
-- Mentor junior engineers and conduct code reviews
-- Collaborate with ML team to productionize machine learning models
+加入我们，站在AI技术最前沿！
+你将深度参与AI Coding、AI Testing、AI DevOps等核心领域，系统性重塑软件研发流程；
+你将直面LLM在实际工程场景落地的关键难题：可靠性、可控性、规模化；
+你将获得Mentor带教机制与成长支持体系，助你从学生快速成长为具备行业影响力的工程师；与一群志同道合、极具技术热情的伙伴共事，拥抱最先进的技术，成为"超级个体"。
+任职资格
+1、本科及以上学历，计算机、软件、人工智能、电子信息等相关专业优先；
+2、扎实的计算机基础：算法和数据结构、操作系统、网络、数据库、分布式系统；熟练掌握至少一种主流语言（Java/Go/Python/C++/Rust等），具备良好的工程实践能力；
+3、AI原生思维：对LLM有深度使用经验，理解Prompt Engineering、Agent设计模式；有AI项目实践经验（AI Coding工具开发、AI应用开发、开源贡献等）；关注AI前沿动态，对新技术有敏锐嗅觉；
+4、极致的技术热情：对AI重构软件研发有强烈兴趣和信念；具备快速学习能力，能在不确定性中探索方向；有开源项目、技术博客、竞赛获奖等经历者优先；

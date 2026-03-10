@@ -1,5 +1,4 @@
 from .factory import (
-    create_model,
     create_interviewer,
     create_interviewee,
     create_evaluator,
@@ -7,7 +6,6 @@ from .factory import (
 )
 
 __all__ = [
-    "create_model",
     "create_interviewer",
     "create_interviewee",
     "create_evaluator",

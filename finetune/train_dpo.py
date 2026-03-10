@@ -73,7 +73,7 @@ def main() -> None:
     # SFT 模型 > 命令行指定基础模型 > config 默认基础模型
     default_sft = ft_cfg.model_output_dir / f"sft_{args.agent}" / "final"
     if args.sft_model:
-        model_path = Path(args.sft_model)
+        model_path = Path(args.sft_model).resolve()
     elif default_sft.exists():
         model_path = default_sft
         print(f"[info] 自动使用 SFT 模型：{model_path}")
@@ -137,7 +137,6 @@ def main() -> None:
         logging_steps=10,
         save_strategy="epoch",
         max_length=ft_cfg.max_seq_length,
-        max_prompt_length=ft_cfg.max_seq_length // 2,
         report_to="none",
     )
 

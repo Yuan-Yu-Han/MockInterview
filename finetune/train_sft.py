@@ -105,8 +105,7 @@ def main() -> None:
         bf16=True,
         logging_steps=10,
         save_strategy="epoch",
-        max_seq_length=ft_cfg.max_seq_length,
-        dataset_text_field=None,   # 使用 messages 列 + chat template
+        max_length=ft_cfg.max_seq_length,
         report_to="none",
     )
 

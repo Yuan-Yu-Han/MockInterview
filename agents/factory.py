@@ -20,14 +20,19 @@ from agno.models.vllm import VLLM
 from config import model
 from agents.prompts import (
     INTERVIEWER_SYSTEM,
+    INTERVIEWER_RAG_ADDON,
     INTERVIEWEE_SYSTEM,
     EVALUATOR_SYSTEM,
     PAIRWISE_SYSTEM,
 )
 
 
-def create_model() -> VLLM:
-    """创建指向本地 vLLM 服务的 VLLM 模型实例（Qwen3-8B）。"""
+def _vllm(max_tokens: int = model.max_tokens) -> VLLM:
+    """统一构造 VLLM 模型实例，确保 max_tokens 始终生效。
+
+    不传 max_tokens 会让 vLLM 用整个剩余 context 作为输出预算，
+    导致 KV cache 耗尽后新请求无限等待（静默挂起）。
+    """
     return VLLM(
         id=model.name,
         base_url=model.base_url,
@@ -35,30 +40,27 @@ def create_model() -> VLLM:
         enable_thinking=False,
         temperature=model.temperature,
         top_p=model.top_p,
+        max_tokens=max_tokens,
     )
 
-
-def _agent(name: str, system: str, tools: Optional[List] = None) -> Agent:
-    """内部辅助函数：用统一配置构造一个 agno Agent。"""
-    return Agent(
-        name=name,
-        model=create_model(),
-        tools=tools or [],
-        instructions=system,
-        markdown=False,
-        num_history_runs=0,
-        stream=False,
-    )
-
-
-# ─── 三个公开工厂函数 ──────────────────────────────────────────────────────────
 
 def create_interviewer(rag_tools: Optional[List] = None) -> Agent:
     """InterviewerAgent —— 生成面试问题和追问。
 
-    拥有完整上下文（简历 + JD），可使用 RAG 检索具体细节。
+    Pipeline RAG 模式下，RAG 检索由 _ask() 中的 Python 代码主动执行，
+    检索结果已注入 prompt；面试官 agent 只负责改写出题，不持有任何工具。
+    rag_tools 参数保留以向后兼容，但不再传给 Agent。
     """
-    return _agent("InterviewerAgent", INTERVIEWER_SYSTEM, tools=rag_tools)
+    instructions = INTERVIEWER_SYSTEM + INTERVIEWER_RAG_ADDON
+    return Agent(
+        name="InterviewerAgent",
+        model=_vllm(),
+        tools=[],           # Pipeline RAG：agent 无工具，检索由 Python 完成
+        instructions=instructions,
+        markdown=False,
+        num_history_runs=0,
+        stream=False,
+    )
 
 
 def create_interviewee(resume_context: str = "") -> Agent:
@@ -78,7 +80,15 @@ def create_interviewee(resume_context: str = "") -> Agent:
             f"{INTERVIEWEE_SYSTEM}\n\n"
             f"--- 你的个人背景（简历） ---\n{resume_context[:600]}"
         )
-    return _agent("IntervieweeAgent", system)
+    return Agent(
+        name="IntervieweeAgent",
+        model=_vllm(),
+        tools=[],
+        instructions=system,
+        markdown=False,
+        num_history_runs=0,
+        stream=False,
+    )
 
 
 def create_evaluator(save_tool=None) -> Agent:
@@ -94,8 +104,15 @@ def create_evaluator(save_tool=None) -> Agent:
     注意：EvalAgent 永远使用 base 模型，绝对不能参与 SFT/DPO 微调，
     否则会导致评分标准随训练模型漂移，破坏数据飞轮的可靠性。
     """
-    tools = [save_tool] if save_tool else []
-    return _agent("EvalAgent", EVALUATOR_SYSTEM, tools=tools)
+    return Agent(
+        name="EvalAgent",
+        model=_vllm(),
+        tools=[save_tool] if save_tool else [],
+        instructions=EVALUATOR_SYSTEM,
+        markdown=False,
+        num_history_runs=0,
+        stream=False,
+    )
 
 
 def create_pairwise_evaluator() -> Agent:
@@ -108,4 +125,12 @@ def create_pairwise_evaluator() -> Agent:
     排序信号比绝对分数更稳定，适合作为 DPO (chosen, rejected) 对的判据。
     永远使用 base 模型，不参与微调。
     """
-    return _agent("PairwiseEvalAgent", PAIRWISE_SYSTEM)
+    return Agent(
+        name="PairwiseEvalAgent",
+        model=_vllm(),
+        tools=[],
+        instructions=PAIRWISE_SYSTEM,
+        markdown=False,
+        num_history_runs=0,
+        stream=False,
+    )
